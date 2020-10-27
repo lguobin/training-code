@@ -106,17 +106,6 @@ func bulidinfunction() {
 }
 
 func digui(n int) int {
-	fmt.Println(`
-	解题:
-		1. 假设 n = 6
-		2. 第 1 轮递归: digui( 6 - 1) * 6 ==>> 6 * 5
-		3. 第 2 轮递归: digui( 5 - 1) * 6 ==>> 6 * 5 * 4
-		4. 第 3 轮递归: digui( 4 - 1) * 6 ==>> 6 * 5 * 4 * 3
-		5. 第 4 轮递归: digui( 3 - 1) * 6 ==>> 6 * 5 * 4 * 3 * 2
-		6. 第 5 轮递归: digui( 2 - 1) * 6 ==>> 6 * 5 * 4 * 3 * 2 * 1
-		7. 第 6 轮递归: digui( 1 - 1) * 6 ==>> 6 * 5 * 4 * 3 * 2 * 1 * 0 | 已超过 n 最小限制，直接跳出递归
-		total: 6 *5 *4 *3 *2 *1 = 720
-	`)
 	if n < 2 {
 		return n
 	}
@@ -148,11 +137,22 @@ func Run() {
 	bulidinfunction()
 
 	// 递归 测试一下
+	fmt.Println(`
+	解题:
+		digui() 函数
+		1. 假设 n = 6
+		2. 第 1 轮递归: digui( 6 - 1) * 6 ==>> 6 * 5
+		3. 第 2 轮递归: digui( 5 - 1) * 6 ==>> 6 * 5 * 4
+		4. 第 3 轮递归: digui( 4 - 1) * 6 ==>> 6 * 5 * 4 * 3
+		5. 第 4 轮递归: digui( 3 - 1) * 6 ==>> 6 * 5 * 4 * 3 * 2
+		6. 第 5 轮递归: digui( 2 - 1) * 6 ==>> 6 * 5 * 4 * 3 * 2 * 1
+		7. 第 6 轮递归: digui( 1 - 1) * 6 ==>> 6 * 5 * 4 * 3 * 2 * 1 * 0 | 已超过 n 最小限制，直接跳出递归
+		total: 6 *5 *4 *3 *2 *1 = 720
+	`)
+
 	fmt.Println(digui(6))
-
-	// fmt.Println(fib_function(10)) // 55
-
-	// fmt.Println("f(1)=", f(1)) // n -> 1	结果:3
-	// fmt.Println("f(5)=", f(4)) // n -> 4	结果:31
-	// fmt.Println("f(6)=", f(6)) // n -> 6	结果:127
+	fmt.Println(fib_function(10)) // 55
+	fmt.Println("f(1)=", f(1))    // n -> 1	结果:3
+	fmt.Println("f(5)=", f(4))    // n -> 4	结果:31
+	fmt.Println("f(6)=", f(6))    // n -> 6	结果:127
 }
