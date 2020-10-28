@@ -24,7 +24,6 @@ func Package_T_learning() {
 	File.OS_Fileinfo()
 	File.OS_filepath()
 
-	File.Time_Package()
 	File.Login_check()
 	File.Count_Num_Test()
 
@@ -44,5 +43,7 @@ func main() {
 
 	File.Run_Error()
 	File.Ptr_Swap()
+
+	File.Time_Package()
 	File.String_Demo()
 }
