@@ -132,7 +132,7 @@ func f(n int) int {
 	return _temp
 }
 
-func Run() {
+func Run_Digui() {
 	Recursive_call(10)
 	bulidinfunction()
 

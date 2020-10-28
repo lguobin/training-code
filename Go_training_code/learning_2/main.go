@@ -27,23 +27,23 @@ func Package_T_learning() {
 	File.Login_check()
 	File.Count_Num_Test()
 
+	File.Checker_Sum()
+	File.Calc()
+	File.Run_Digui()
+	File.Run_Error()
+	File.Ptr_Swap()
+
+	// 使用自带包
+	File.String_Demo()
+	File.Time_Package()
+
 }
 
 func main() {
 	// Menu()
 	// Bsisc()
-
 	// Package_T_learning()
 
-	File.Login_check()
-	// File.Count_Num_Test()
-	File.Checker_Sum()
-	File.Calc()
-	File.Run()
+	File.Array_Demo()
 
-	File.Run_Error()
-	File.Ptr_Swap()
-
-	File.Time_Package()
-	File.String_Demo()
 }

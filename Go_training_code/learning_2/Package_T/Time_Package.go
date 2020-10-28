@@ -84,6 +84,11 @@ func test_5() {
 	fmt.Println(time.Millisecond)
 	fmt.Println(time.Millisecond * 1000)
 	fmt.Println(time.Millisecond * 60000)
+
+	now := time.Now()
+	// Unix 和 UnixNano 的使用
+	fmt.Printf("Unix时间戳 = %v、长度: %v| UnixNano时间戳 = %v、长度: %v\n",
+		now.Unix(), len(fmt.Sprint(now.Unix())), now.UnixNano(), len(fmt.Sprint(now.UnixNano())))
 }
 
 func Time_Package() {
@@ -98,5 +103,10 @@ func Time_Package() {
 	test_3()
 	test_4()
 	test_5()
+
+	a := 1603858268
+	b, c := fmt.Sprint(a), strconv.Itoa(a)
+	fmt.Printf("%T | %T\n", b, c)
+	fmt.Println(b == c)
 
 }
