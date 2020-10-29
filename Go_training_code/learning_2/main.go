@@ -12,6 +12,7 @@ func Bsisc() {
 	Bsisc_Struct()
 	Bsisc_OOP()
 
+	Bsisc_Map()
 	Bsisc_Interface()
 }
 
@@ -36,7 +37,7 @@ func Package_T_learning() {
 	// 使用自带包
 	File.String_Demo()
 	File.Time_Package()
-
+	File.Array_Demo()
 }
 
 func main() {
@@ -44,6 +45,5 @@ func main() {
 	// Bsisc()
 	// Package_T_learning()
 
-	File.Array_Demo()
-
+	Bsisc_Map()
 }
