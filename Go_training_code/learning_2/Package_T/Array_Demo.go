@@ -80,6 +80,63 @@ func array_random() {
 	fmt.Println("交换后~=", Arr)
 }
 
+func Slice_fib(n int) []uint16 {
+	fmt.Println("切片 - 斐波那契数列")
+	fibSlice := make([]uint16, n)
+	fibSlice[0], fibSlice[1] = 1, 1
+	for i := 2; i < n; i++ {
+		fibSlice[i] = fibSlice[i-1] + fibSlice[i-2]
+	}
+	return fibSlice
+}
+func Slice_Demo() {
+	var intArr [5]int = [...]int{1, 22, 33, 44, 55}
+	slice := intArr[0:3]
+	fmt.Println("slice 的元素是 =", slice)       //  1, 22, 33
+	fmt.Println("slice 的元素个数 =", len(slice)) // 3
+	fmt.Println("slice 的容量 =", cap(slice))   // 切片的容量是可以动态变化
+
+	fmt.Printf("intArr[0]的地址=%p | 值: %v\n", &intArr[0], intArr[0])
+	fmt.Printf("slice[0]的地址=%p  | 值: %v\n", &slice[0], slice[0])
+
+	// 修改切片，原数组也会变更值
+	slice[1] = 6666666
+	fmt.Println("intArr=", intArr)
+	fmt.Println("slice 的元素是 =", slice)
+
+	// 用append内置函数，可以对切片进行动态追加
+	slice2 := append(slice, 400, 500, 600)
+	fmt.Println("slice 的元素是 =", slice)
+	fmt.Println("slice2 的元素是 =", slice2)
+
+	// 用copy内置函数完成拷贝
+	slice3 := make([]int, 10)
+	copy(slice3, slice2)
+	fmt.Println("slice2 的元素是 =", slice2, "\nslice3 的元素是 =", slice3)
+}
+
+func Slice_to_String() {
+	fmt.Println("\t\tstring底层是一个byte数组，因此string也可以进行切片处理")
+	str := "abc@atguigu"
+	slice := str[6:]
+	fmt.Println(slice)
+
+	//string是不可变的，也就说不能通过 str[0] = 'z' 方式来修改字符串
+	//str[0] = 'z' [编译不会通过，报错，原因是string是不可变]
+	//如果需要修改字符串，可以先将string -> []byte / 或者 []rune -> 修改 -> 重写转成string
+	// "hello@atguigu" =>改成 "zello@atguigu"
+
+	temp := []byte(str)
+	fmt.Printf("修改前: %v\n", string(temp))
+	temp[0], temp[1], temp[2] = 'A', 'B', 'C'
+	fmt.Printf("修改后: %v\n", string(temp))
+
+	arr1 := []rune(str)
+	arr1[0] = '北'
+	str = string(arr1)
+	fmt.Println("str=", str)
+}
+
 func Array_Demo() {
 	fmt.Println("\t --- 数组 --- ")
 	New_array()
@@ -100,4 +157,9 @@ func Array_Demo() {
 
 	arryay_Get_max()
 	array_random()
+
+	fmt.Println(Slice_fib(10))
+	Slice_Demo()
+	Slice_to_String()
+
 }
