@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func modifyUser(users map[string]map[string]string, name string) {
 	//判断users中是否有name
@@ -50,6 +53,27 @@ func Map_Demo() {
 
 }
 
+func Map_Sort() {
+	temp := make(map[int]string, 10)
+	temp[10] = "age"
+	temp[6] = "66666666"
+	temp[1] = "11111111"
+	temp[3] = "test"
+
+	var num []int
+	for k, _ := range temp {
+		num = append(num, k)
+	}
+	fmt.Println(temp, num)
+	// 排序
+	sort.Ints(num)
+	fmt.Printf("经过排序处理 -> %v\n", num)
+
+	for _, k := range num {
+		fmt.Printf("map1[%v]=%v \n", k, temp[k])
+	}
+}
+
 //定义一个学生结构体
 type Stu struct {
 	Name string
@@ -84,4 +108,5 @@ func Bsisc_Map() {
 		fmt.Printf("学生的地址是: %v\n", v.City)
 		fmt.Println()
 	}
+	Map_Sort()
 }
