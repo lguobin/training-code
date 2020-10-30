@@ -24,6 +24,7 @@ func Package_T_learning() {
 	File.OS_Seek()
 	File.OS_Fileinfo()
 	File.OS_filepath()
+	File.Cmd_args()
 
 	File.Login_check()
 	File.Count_Num_Test()
@@ -46,4 +47,5 @@ func main() {
 	// Package_T_learning()
 
 	Bsisc_Map()
+
 }
