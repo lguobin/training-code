@@ -14,6 +14,7 @@ func Bsisc() {
 
 	Bsisc_Map()
 	Bsisc_Interface()
+	Bsisc_json()
 }
 
 func Package_T_learning() {
@@ -39,6 +40,8 @@ func Package_T_learning() {
 	File.String_Demo()
 	File.Time_Package()
 	File.Array_Demo()
+
+	File.Flag_Demo()
 }
 
 func main() {
@@ -46,7 +49,5 @@ func main() {
 	// Bsisc()
 	// Package_T_learning()
 
-	Bsisc_Map()
-	Bsisc_json()
-
+	File.Flag_Demo()
 }
