@@ -15,5 +15,4 @@ func Bsisc_Slice() {
 	var s1 []int
 	s2 := [3]byte{'A', 'B', 'C'}
 	fmt.Println(s1, s2)
-
 }

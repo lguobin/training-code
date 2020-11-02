@@ -1,7 +1,9 @@
 package main
 
 import (
+	Json "learning_2/Json"
 	File "learning_2/Package_T"
+	_Test "learning_2/Tester"
 )
 
 func Bsisc() {
@@ -40,14 +42,25 @@ func Package_T_learning() {
 	File.String_Demo()
 	File.Time_Package()
 	File.Array_Demo()
-
 	File.Flag_Demo()
+}
+
+func Json_learning() {
+	Json.Json_Demo()
+	Json.Json_to_struct()
+}
+
+func Tester_learning() {
+	_Test.Test_Demo()
 }
 
 func main() {
 	// Menu()
 	// Bsisc()
 	// Package_T_learning()
+	// Json_learning()
 
-	File.Flag_Demo()
+	// string_to_slice()
+
+	Tester_learning()
 }
