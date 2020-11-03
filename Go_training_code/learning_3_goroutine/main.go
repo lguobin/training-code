@@ -19,10 +19,11 @@ func Go() {
 func Channel_Demo() {
 	Chan_Demo.Chan_Demo_1()
 	Chan_Demo.Chan_Demo_2()
+	Chan_Demo.Chan_Demo_3()
+	Chan_Demo.Chan_Demo_4()
 }
 func main() {
 	// Go()
 
-	Chan_Demo.Chan_Demo_1()
-	Chan_Demo.Chan_Demo_2()
+	Chan_Demo.Chan_Demo_4()
 }
