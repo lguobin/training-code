@@ -6,3 +6,25 @@
         strconv
         unsafe
 ```
+
+## 常用库
+```go
+fmt
+io
+bufio
+strconv
+os
+sync
+flag
+encoding/json
+http
+sort
+runtime
+```
+
+## 并发
+```go
+go
+channel
+匿名函数
+```
