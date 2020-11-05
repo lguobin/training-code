@@ -2,6 +2,7 @@ package Tester
 
 import (
 	"fmt"
+	"log"
 	"testing"
 )
 
@@ -19,4 +20,8 @@ func TestAddUpdate(t *testing.T) {
 func TestHello(t *testing.T) {
 	fmt.Println("TestHello被调用..")
 
+}
+
+func TestLOG(t *testing.T) {
+	log.Println("testetest")
 }
