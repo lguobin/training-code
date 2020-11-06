@@ -6,6 +6,25 @@
         strconv
         unsafe
 ```
+## 函数
+```go
+A:
+    func 函数名(){
+        // TODO
+    }
+
+B:
+    type Person struct{
+        // TODO
+    }
+    func (P Person) UsagePerson(){
+        // TODO
+    }
+    func main(){
+        temp := Person
+        temp.UsagePerson()
+    }
+```
 
 ## 常用库
 ```go
