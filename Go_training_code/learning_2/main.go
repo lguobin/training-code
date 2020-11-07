@@ -22,6 +22,9 @@ func Bsisc() {
 func Bsisc_Struct() {
 	_Struct.Bsisc_Struct()
 	_Struct.Struct_Demo_1()
+	_Struct.Struct_Demo_2()
+	_Struct.Struct_Demo_3()
+	_Struct.Struct_Demo_4()
 }
 
 func Package_T_learning() {
