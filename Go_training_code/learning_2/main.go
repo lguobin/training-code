@@ -3,6 +3,7 @@ package main
 import (
 	Json "learning_2/Json"
 	File "learning_2/Package_T"
+	_Struct "learning_2/Struct"
 	_Test "learning_2/Tester"
 )
 
@@ -11,12 +12,16 @@ func Bsisc() {
 
 	Bsisc_func()
 	Bsisc_Closure()
-	Bsisc_Struct()
 	Bsisc_OOP()
 
 	Bsisc_Map()
 	Bsisc_Interface()
 	Bsisc_json()
+}
+
+func Bsisc_Struct() {
+	_Struct.Bsisc_Struct()
+	_Struct.Struct_Demo_1()
 }
 
 func Package_T_learning() {
@@ -62,5 +67,7 @@ func main() {
 
 	// string_to_slice()
 
-	Tester_learning()
+	// Tester_learning()
+
+	Bsisc_Struct()
 }
