@@ -16,6 +16,13 @@ func Go() {
 	Math.Math()
 	runtime.Demo_3()
 	runtime.Demo_4()
+	runtime.Demo_5()
+
+	// 多协程
+	runtime.Demo_6()
+	runtime.Demo_7()
+	runtime.Demo_8()
+	runtime.Demo_9()
 
 }
 func Channel_Demo() {
@@ -37,5 +44,6 @@ func Request() {
 }
 func main() {
 	// Go()
-	Chan_Demo.Chan_Demo_8()
+
+	runtime.Demo_9()
 }
