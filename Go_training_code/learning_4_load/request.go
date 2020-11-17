@@ -38,12 +38,12 @@ func Mall_createOrder() {
 		fmt.Println("response Status: ", resp.StatusCode)
 		return
 	}
-
 }
 
 func saveResponse(Statuscode, text string) {
-	t := time.Now()
-	msg := t.Format("2006-01-02 15:04:05") + " | " + Statuscode + " | " + text + "\n"
+	// t := time.Now()
+	// msg := t.Format("2006-01-02 15:04:05") + " | " + Statuscode + " | " + text + "\n"
+	msg := text + "\n"
 	dir, _ := os.Getwd()
 	filename := dir + "\\temp.txt"
 	file, err := os.Open(filename)
@@ -51,7 +51,7 @@ func saveResponse(Statuscode, text string) {
 	if err != nil && os.IsNotExist(err) {
 		_, err = os.Create(filename)
 		if err != nil {
-			fmt.Println("创建文件失败")
+			fmt.Println("Failed to create file.")
 		}
 	}
 	f, _ := os.OpenFile(filename, os.O_APPEND|os.O_RDWR, os.ModeAppend)
@@ -66,7 +66,7 @@ func saveResponse(Statuscode, text string) {
 }
 
 // var limit = 1000000000
-var limit = 9986031
+var limit = 10000000
 var wg sync.WaitGroup
 var matex sync.Mutex
 
@@ -75,7 +75,8 @@ func task() {
 	for {
 		matex.Lock()
 		if limit > 0 {
-			Mall_createOrder()
+			// Mall_createOrder()
+			// saveResponse("test", fmt.Sprint(limit))
 			limit--
 		} else {
 			fmt.Println("完成任务...")
@@ -87,18 +88,14 @@ func task() {
 }
 
 func run() {
-	startTime := time.Now().Unix()
+	// startTime := time.Now().Unix()
+	startTime := time.Now()
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	wg.Add(8)
-	go task()
-	go task()
-	go task()
-	go task()
+	wg.Add(4)
 	go task()
 	go task()
 	go task()
 	go task()
 	wg.Wait()
-	saveResponse("总耗时: "+fmt.Sprint(time.Now().Unix()-startTime), "秒")
-	fmt.Printf("总耗时: %d\n", time.Now().Unix()-startTime)
+	fmt.Printf("总耗时: %s\n", time.Since(startTime))
 }
