@@ -44,6 +44,9 @@ func Channel_Demo() {
 	Chan_Demo.Chan_Demo_6()
 	Chan_Demo.Chan_Demo_7()
 	Chan_Demo.Chan_Demo_8()
+
+	Chan_Demo.For_chan()
+	Chan_Demo.Interface_chan()
 }
 
 func Request() {
@@ -51,6 +54,8 @@ func Request() {
 }
 func main() {
 	// Go()
+	// Lock()
 
-	Lock()
+	Chan_Demo.For_chan()
+	Chan_Demo.Interface_chan()
 }
