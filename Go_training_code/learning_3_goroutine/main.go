@@ -23,8 +23,15 @@ func Go() {
 	runtime.Demo_7()
 	runtime.Demo_8()
 	runtime.Demo_9()
-
 }
+
+func Lock() {
+	runtime.Lock_UnLock()
+	runtime.Read_write_lock()
+	runtime.Wait_group_test()
+	runtime.Map_safe_test()
+}
+
 func Channel_Demo() {
 	Chan_Demo.Chan_Demo_0()
 	Chan_Demo.Chan_Demo_1()
@@ -45,5 +52,5 @@ func Request() {
 func main() {
 	// Go()
 
-	runtime.Demo_0()
+	Lock()
 }
