@@ -112,4 +112,15 @@ func main() {
 	Interface_training()
 
 	// training()
+
+	// 类似 Python - try
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println(err)
+		}
+	}()
+	var a map[int]string
+	// 使用 map 必须先要 make, make 的作用就是给map分配数据空间
+	// a = make(map[int]string, 10)
+	a[0] = "报错..."
 }
