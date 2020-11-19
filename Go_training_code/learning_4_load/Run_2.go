@@ -1,64 +1,9 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
 	"fmt"
-	"io/ioutil"
-	"net/http"
-	"os"
 	"time"
 )
-
-func Mall_createOrder() {
-	// temp_status := fmt.Sprint(time.Now().UnixNano() / int64(time.Millisecond))
-	url := "http://test.sichuananpeng.com/mallActivity/createOrder"
-	requestBody := "ext=&itemNum=1&request_time=&address=龙口东路333号&payType=2&shippingName=章鱼烧&cityName=广州市天河区博物馆奇妙夜&freight=0.00&actId=119&shippingPhone=13250111111&addressId=17"
-	var jsonStr = []byte(requestBody)
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
-	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Add("version", "1.9.36")
-	req.Header.Add("platform", "android")
-	req.Header.Add("Authorization", "")
-	req.Header.Add("nonce", "")
-	req.Header.Add("sign", "")
-	req.Header.Add("timestamp", "")
-	client := &http.Client{}
-	resp, err := client.Do(req)
-	defer resp.Body.Close()
-	if err != nil {
-		panic(err)
-	}
-	body, _ := ioutil.ReadAll(resp.Body)
-	// saveResponse(resp.Status, string(body))
-	if resp.StatusCode != 200 {
-		fmt.Println("response Status: ", resp.StatusCode)
-		return
-	}
-}
-
-func saveResponse(Statuscode, text string) {
-	t := time.Now()
-	msg := t.Format("2006-01-02 15:04:05") + " | " + Statuscode + " | " + text + "\n"
-	dir, _ := os.Getwd()
-	filename := dir + "\\temp.txt"
-	file, err := os.Open(filename)
-	defer func() { file.Close() }()
-	if err != nil && os.IsNotExist(err) {
-		_, err = os.Create(filename)
-		if err != nil {
-			fmt.Println("Failed to create file.")
-		}
-	}
-	f, _ := os.OpenFile(filename, os.O_APPEND|os.O_RDWR, os.ModeAppend)
-	defer f.Close()
-	buf_write := bufio.NewWriter(f)
-	buf_write.WriteString(msg)
-	err = buf_write.Flush()
-	if err != nil {
-		fmt.Println("flush error : ", err)
-	}
-}
 
 // Golang 实现线程池
 type Pool struct {
