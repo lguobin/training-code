@@ -6,6 +6,7 @@ import (
 	Chan_Demo "learning_3_goroutine/Channel"
 	runtime "learning_3_goroutine/Goroutine"
 	Req "learning_3_goroutine/Http"
+	_Goroutine_Debug "learning_3_goroutine/goroutine_Debug"
 )
 
 func Go() {
@@ -52,10 +53,21 @@ func Channel_Demo() {
 func Request() {
 	Req.Request()
 }
+
+func _Goroutine_Test() {
+	// go run -race .
+	// https://my.oschina.net/u/3865071/blog/4821661
+	_Goroutine_Debug.Goroutine_Demo_1()
+	_Goroutine_Debug.Goroutine_Demo_2()
+	_Goroutine_Debug.Goroutine_Demo_3()
+}
+
 func main() {
 	// Go()
 	// Lock()
 
-	Chan_Demo.For_chan()
-	Chan_Demo.Interface_chan()
+	// Chan_Demo.For_chan()
+	// Chan_Demo.Interface_chan()
+
+	// _Goroutine_Test()
 }
