@@ -63,11 +63,13 @@ func _Goroutine_Test() {
 }
 
 func main() {
+
 	// Go()
 	// Lock()
 
 	// Chan_Demo.For_chan()
 	// Chan_Demo.Interface_chan()
 
-	// _Goroutine_Test()
+	_Goroutine_Test()
+
 }
